@@ -20,14 +20,13 @@ Pod::Spec.new do |s|
                      :commit => "db8617b19d181fa31090e01d99f969bd5959a9c3" }
 
   s.prepare_command = <<-CMD
-                      find .
-                      echo "#define _STDINT_HAVE_STDINT_H 1\\n#include <stdint.h>" > nestegg/include/nestegg/nestegg-stdint.h
+                      echo "#define _STDINT_HAVE_STDINT_H 1\\n#include <stdint.h>" > include/nestegg/nestegg-stdint.h
                       CMD
 
-  s.source_files = "nestegg/include/**/*.h",
-                   "nestegg/src/**/*.c",
-                   "nestegg/halloc/**/*.{c,h}"
-  s.public_header_files = "nestegg/include/**/*.h"
+  s.source_files = "include/**/*.h",
+                   "src/**/*.c",
+                   "halloc/**/*.{c,h}"
+  s.public_header_files = "include/**/*.h"
 
    s.compiler_flags = "-Wno-conversion"
 end
