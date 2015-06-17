@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
                      :commit => "db8617b19d181fa31090e01d99f969bd5959a9c3" }
 
   s.prepare_command = <<-CMD
+                      find .
                       echo "#define _STDINT_HAVE_STDINT_H 1\\n#include <stdint.h>" > nestegg/include/nestegg/nestegg-stdint.h
                       CMD
 
