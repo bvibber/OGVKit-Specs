@@ -32,4 +32,7 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = "VPX.framework"
   s.frameworks = "VPX"
+
+  s.source_files = "VPX/VPX.framework/Headers/**/*.h"
+  s.public_header_files = "VPX/VPX.framework/Headers/**/*.h"
 end
