@@ -41,5 +41,5 @@ Pod::Spec.new do |s|
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
   
-  s.dependency 'Ogg', '>=1.1'
+  s.dependency 'libogg', '>=1.1'
 end
