@@ -6,12 +6,12 @@ Pod::Spec.new do |s|
   source = "http://downloads.xiph.org/releases/" + name + "/" + libver + ".tar.bz2"
   sha1 = "8dcaa8e61cd86eb1244467c0b64b9ddac04ae262"
 
-  s.name         = "Theora"
+  s.name         = "libtheora"
   s.version      = ver
-  s.summary      = "libtheora video codec library"
+  s.summary      = "Low-level Theora video codec library"
 
   s.description  = <<-DESC
-                   Xiph's Theora video codec library, packaged for iOS.
+                   Xiph's C-based Theora video codec library, packaged for iOS.
                    Needed for decoding or encoding of video in Ogg media.
                    DESC
 

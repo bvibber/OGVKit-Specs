@@ -6,12 +6,12 @@ Pod::Spec.new do |s|
   source = "http://downloads.xiph.org/releases/" + name + "/" + libver + ".tar.xz"
   sha1 = "5e525ec6a4135066932935c01d2c309ea5009f8d"
 
-  s.name         = "Ogg"
+  s.name         = "libogg"
   s.version      = ver
-  s.summary      = "libogg media demuxer/muxer library"
+  s.summary      = "Low-level media demuxer/muxer library"
 
   s.description  = <<-DESC
-                   Xiph's Ogg media stream demuxer/muxer library, packaged for iOS.
+                   Xiph's C-based Ogg media stream demuxer/muxer library, packaged for iOS.
                    Needed for decoding or encoding of Ogg Theora video and Vorbis audio.
                    DESC
 
