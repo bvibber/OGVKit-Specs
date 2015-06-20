@@ -30,9 +30,14 @@ Pod::Spec.new do |s|
   s.compiler_flags = "-O3",
                      "-Wno-conversion",
                      "-Wno-tautological-compare",
-                     "-Wno-absolute-value"
+                     "-Wno-absolute-value",
+                     "-Wno-shift-op-parentheses",
+                     "-Wno-logical-op-parentheses",
+                     "-Wno-parentheses",
+                     "-Wno-unused-function"
   s.source_files = "lib",
                    "include/**/*.h"
+  s.exclude_files = "lib/encoder_disabled.c"
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
   
