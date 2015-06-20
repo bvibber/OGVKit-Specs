@@ -31,9 +31,9 @@ Pod::Spec.new do |s|
                      "-Wno-conversion",
                      "-Wno-tautological-compare",
                      "-Wno-absolute-value"
-  s.source_files = libver + "/src",
-                   libver + "/include/**/*.h"
-  s.public_header_files = libver + "/include/**/*.h"
+  s.source_files = "src",
+                   "include/**/*.h"
+  s.public_header_files = "include/**/*.h"
   s.header_dir = name
   
   s.dependency 'Ogg', '>=1.1'
