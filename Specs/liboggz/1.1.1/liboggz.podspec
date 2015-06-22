@@ -34,7 +34,8 @@ Pod::Spec.new do |s|
                      "-Wno-conversion",
                      "-Wno-unused-function",
                      "-Wno-unused-variable",
-                     "-Wno-unreachable-code"
+                     "-Wno-unreachable-code",
+                     "-Wno-format"
 
   s.source_files = "config.h",
                    "src/liboggz",
