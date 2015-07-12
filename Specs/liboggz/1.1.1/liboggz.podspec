@@ -27,44 +27,44 @@ Pod::Spec.new do |s|
                      :sha1 => sha1 }
 
   s.prepare_command = <<-'CMD'
-                      echo "#define HAVE_DLFCN_H 1\n"\
-                      "#define HAVE_FCNTL_H 1\n"\
-                      "#define HAVE_GETOPT_LONG /**/\n"\
-                      "#define HAVE_INTTYPES_H 1\n"\
-                      "#define HAVE_MEMMOVE 1\n"\
-                      "#define HAVE_MEMORY_H 1\n"\
-                      "#define HAVE_SSIZE_T 1\n"\
-                      "#define HAVE_STDINT_H 1\n"\
-                      "#define HAVE_STDLIB_H 1\n"\
-                      "#define HAVE_STRINGS_H 1\n"\
-                      "#define HAVE_STRING_H 1\n"\
-                      "#define HAVE_SYS_STAT_H 1\n"\
-                      "#define HAVE_SYS_TYPES_H 1\n"\
-                      "#define HAVE_UNISTD_H 1\n"\
-                      "#define LT_OBJDIR \".libs/\"\n"\
-                      "#define OGGZ_CONFIG_READ 1\n"\
-                      "#define OGGZ_CONFIG_WRITE 1\n"\
-                      "#define OGGZ_OFF_MAX 0x7FFFFFFFFFFFFFFFLL\n"\
-                      "#define PACKAGE \"liboggz\"\n"\
-                      "#define PACKAGE_BUGREPORT \"\"\n"\
-                      "#define PACKAGE_NAME \"\"\n"\
-                      "#define PACKAGE_STRING \"\"\n"\
-                      "#define PACKAGE_TARNAME \"\"\n"\
-                      "#define PACKAGE_URL \"\"\n"\
-                      "#define PACKAGE_VERSION ""\n"\
-                      "#define SIZEOF_OFF_T 8\n"\
-                      "#define SIZEOF_OGGZ_OFF_T 8\n"\
-                      "#define SIZEOF_SSIZE_T 8\n"\
-                      "#define STDC_HEADERS 1\n"\
-                      "#define VERSION \"1.1.1\"\n"\
+                      echo "#define HAVE_DLFCN_H 1"\n\
+                      "#define HAVE_FCNTL_H 1"\n\
+                      "#define HAVE_GETOPT_LONG /**/"\n\
+                      "#define HAVE_INTTYPES_H 1"\n\
+                      "#define HAVE_MEMMOVE 1"\n\
+                      "#define HAVE_MEMORY_H 1"\n\
+                      "#define HAVE_SSIZE_T 1"\n\
+                      "#define HAVE_STDINT_H 1"\n\
+                      "#define HAVE_STDLIB_H 1"\n\
+                      "#define HAVE_STRINGS_H 1"\n\
+                      "#define HAVE_STRING_H 1"\n\
+                      "#define HAVE_SYS_STAT_H 1"\n\
+                      "#define HAVE_SYS_TYPES_H 1"\n\
+                      "#define HAVE_UNISTD_H 1"\n\
+                      "#define LT_OBJDIR \".libs/\""\n\
+                      "#define OGGZ_CONFIG_READ 1"\n\
+                      "#define OGGZ_CONFIG_WRITE 1"\n\
+                      "#define OGGZ_OFF_MAX 0x7FFFFFFFFFFFFFFFLL"\n\
+                      "#define PACKAGE \"liboggz\""\n\
+                      "#define PACKAGE_BUGREPORT \"\""\n\
+                      "#define PACKAGE_NAME \"\""\n\
+                      "#define PACKAGE_STRING \"\""\n\
+                      "#define PACKAGE_TARNAME \"\""\n\
+                      "#define PACKAGE_URL \"\""\n\
+                      "#define PACKAGE_VERSION """\n\
+                      "#define SIZEOF_OFF_T 8"\n\
+                      "#define SIZEOF_OGGZ_OFF_T 8"\n\
+                      "#define SIZEOF_SSIZE_T 8"\n\
+                      "#define STDC_HEADERS 1"\n\
+                      "#define VERSION \"1.1.1\""\n\
                       > config.h
                       
-                      echo "#ifndef __OGGZ_OFF_T_GENERATED_H__\n"\
-                      "#define __OGGZ_OFF_T_GENERATED_H__\n"\
-                      "#include <sys/types.h>\n"\
-                      "typedef off_t oggz_off_t;\n"\
-                      "#define PRI_OGGZ_OFF_T \"ll\"\n"\
-                      "#endif /* __OGGZ_OFF_T_GENERATED__ */\n"\
+                      echo "#ifndef __OGGZ_OFF_T_GENERATED_H__"\n\
+                      "#define __OGGZ_OFF_T_GENERATED_H__"\n\
+                      "#include <sys/types.h>"\n\
+                      "typedef off_t oggz_off_t;"\n\
+                      "#define PRI_OGGZ_OFF_T \"ll\""\n\
+                      "#endif /* __OGGZ_OFF_T_GENERATED__ */"\n\
                       > include/oggz/oggz_off_t_generated.h
                       
                       CMD
