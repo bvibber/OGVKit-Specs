@@ -26,46 +26,45 @@ Pod::Spec.new do |s|
   s.source       = { :http => source,
                      :sha1 => sha1 }
 
-  s.prepare_command = <<-CMD
-                      echo "#define HAVE_DLFCN_H 1\\n"\
-                      "#define HAVE_FCNTL_H 1\\n"\
-                      "#define HAVE_GETOPT_LONG /**/\\n"\
-                      "#define HAVE_INTTYPES_H 1\\n"\
-                      "#define HAVE_MEMMOVE 1\\n"\
-                      "#define HAVE_MEMORY_H 1\\n"\
-                      "#define HAVE_SSIZE_T 1\\n"\
-                      "#define HAVE_STDINT_H 1\\n"\
-                      "#define HAVE_STDLIB_H 1\\n"\
-                      "#define HAVE_STRINGS_H 1\\n"\
-                      "#define HAVE_STRING_H 1\\n"\
-                      "#define HAVE_SYS_STAT_H 1\\n"\
-                      "#define HAVE_SYS_TYPES_H 1\\n"\
-                      "#define HAVE_UNISTD_H 1\\n"\
-                      "#define LT_OBJDIR \\".libs/\\"\\n"\
-                      "#define OGGZ_CONFIG_READ 1\\n"\
-                      "#define OGGZ_CONFIG_WRITE 1\\n"\
-                      "#define OGGZ_OFF_MAX 0x7FFFFFFFFFFFFFFFLL\\n"\
-                      "#define PACKAGE \\"liboggz\\"\\n"\
-                      "#define PACKAGE_BUGREPORT \\"\\"\\n"\
-                      "#define PACKAGE_NAME \\"\\"\\n"\
-                      "#define PACKAGE_STRING \\"\\"\\n"\
-                      "#define PACKAGE_TARNAME \\"\\"\\n"\
-                      "#define PACKAGE_URL \\"\\"\\n"\
-                      "#define PACKAGE_VERSION ""\\n"\
-                      "#define SIZEOF_OFF_T 8\\n"\
-                      "#define SIZEOF_OGGZ_OFF_T 8\\n"\
-                      "#define SIZEOF_SSIZE_T 8\\n"\
-                      "#define STDC_HEADERS 1\\n"\
-                      "#define VERSION \\"1.1.1\\"\\n"\
-                      > config.h
+  s.prepare_command = <<-'CMD'
+                      echo '#define HAVE_DLFCN_H 1' > config.h
+                      echo '#define HAVE_FCNTL_H 1' >> config.h
+                      echo '#define HAVE_GETOPT_LONG /**/' >> config.h
+                      echo '#define HAVE_INTTYPES_H 1' >> config.h
+                      echo '#define HAVE_MEMMOVE 1' >> config.h
+                      echo '#define HAVE_MEMORY_H 1' >> config.h
+                      echo '#define HAVE_SSIZE_T 1' >> config.h
+                      echo '#define HAVE_STDINT_H 1' >> config.h
+                      echo '#define HAVE_STDLIB_H 1' >> config.h
+                      echo '#define HAVE_STRINGS_H 1' >> config.h
+                      echo '#define HAVE_STRING_H 1' >> config.h
+                      echo '#define HAVE_SYS_STAT_H 1' >> config.h
+                      echo '#define HAVE_SYS_TYPES_H 1' >> config.h
+                      echo '#define HAVE_UNISTD_H 1' >> config.h
+                      echo '#define LT_OBJDIR ".libs/"' >> config.h
+                      echo '#define OGGZ_CONFIG_READ 1' >> config.h
+                      echo '#define OGGZ_CONFIG_WRITE 1' >> config.h
+                      echo '#define OGGZ_OFF_MAX 0x7FFFFFFFFFFFFFFFLL' >> config.h
+                      echo '#define PACKAGE "liboggz"' >> config.h
+                      echo '#define PACKAGE_BUGREPORT ""' >> config.h
+                      echo '#define PACKAGE_NAME ""' >> config.h
+                      echo '#define PACKAGE_STRING ""' >> config.h
+                      echo '#define PACKAGE_TARNAME ""' >> config.h
+                      echo '#define PACKAGE_URL ""' >> config.h
+                      echo '#define PACKAGE_VERSION ""' >> config.h
+                      echo '#define SIZEOF_OFF_T 8' >> config.h
+                      echo '#define SIZEOF_OGGZ_OFF_T 8' >> config.h
+                      echo '#define SIZEOF_SSIZE_T 8' >> config.h
+                      echo '#define STDC_HEADERS 1' >> config.h
+                      echo '#define VERSION "1.1.1"' >> config.h
                       
-                      echo "#ifndef __OGGZ_OFF_T_GENERATED_H__\\n"\
-                      "#define __OGGZ_OFF_T_GENERATED_H__\\n"\
-                      "#include <sys/types.h>\\n"\
-                      "typedef off_t oggz_off_t;\\n"\
-                      "#define PRI_OGGZ_OFF_T \\"ll\\"\\n"\
-                      "#endif /* __OGGZ_OFF_T_GENERATED__ */\\n"\
-                      > include/oggz/oggz_off_t_generated.h
+                      echo '#ifndef __OGGZ_OFF_T_GENERATED_H__' > include/oggz/oggz_off_t_generated.h
+                      echo '#define __OGGZ_OFF_T_GENERATED_H__' >> include/oggz/oggz_off_t_generated.h
+                      echo '#include <sys/types.h>' >> include/oggz/oggz_off_t_generated.h
+                      echo 'typedef off_t oggz_off_t;' >> include/oggz/oggz_off_t_generated.h
+                      echo '#define PRI_OGGZ_OFF_T "ll"' >> include/oggz/oggz_off_t_generated.h
+                      echo '#endif /* __OGGZ_OFF_T_GENERATED__ */' >> include/oggz/oggz_off_t_generated.h
+                      
                       
                       CMD
 
