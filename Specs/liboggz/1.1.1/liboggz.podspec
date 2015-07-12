@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.source       = { :http => source,
                      :sha1 => sha1 }
 
-  s.prepare_command = <<-CMD
+  s.prepare_command = <<-'CMD'
                       echo "#define HAVE_DLFCN_H 1\n"\
                       "#define HAVE_FCNTL_H 1\n"\
                       "#define HAVE_GETOPT_LONG /**/\n"\
