@@ -28,5 +28,5 @@ Pod::Spec.new do |s|
 
   s.source_files = "VPX.framework/Headers/vpx/**/*.h"
   s.public_header_files = "VPX.framework/Headers/vpx/**/*.h"
-  s.header_dir = 'vpx'
+  s.header_mappings_dir = 'VPX.framework/Headers'
 end
