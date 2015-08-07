@@ -23,9 +23,6 @@ Pod::Spec.new do |s|
                      :sha1 => sha1,
                      :flatten => true }
 
-  s.vendored_libraries = "VPX.framework/VPX"
-
-  s.source_files = "VPX.framework/Headers/vpx/**/*.h"
-  s.public_header_files = "VPX.framework/Headers/vpx/**/*.h"
-  s.header_mappings_dir = 'VPX.framework/Headers'
+  s.vendored_frameworks = "VPX.framework"
+  s.frameworks = "VPX"
 end
