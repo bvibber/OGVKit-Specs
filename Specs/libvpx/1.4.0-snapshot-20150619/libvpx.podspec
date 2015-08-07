@@ -11,6 +11,10 @@ Pod::Spec.new do |s|
                    Untouched source, simply pre-built for convenience.
                    DESC
 
+  s.prepare_command = <<-'CMD'
+                      echo "// Stub .h for paths" > VPX.framework/Headers/vpx-header-stub.h
+                      CMD
+
   s.homepage     = "https://github.com/brion/VPX-iOS"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
