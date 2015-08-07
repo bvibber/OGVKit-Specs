@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
                      :flatten => true }
 
   s.vendored_frameworks = "VPX.framework"
-  s.frameworks = "VPX"
 
   s.source_files = "VPX.framework/Headers/vpx/**/*.h"
   s.public_header_files = "VPX.framework/Headers/vpx/**/*.h"
