@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  ver = "1.4.0-snapshot-20150914"
-  sha1 = "b33b3c4714a26280fd2a37e1384df051c7c97e18"
+  ver = "1.4.0-snapshot-20150817"
+  sha1 = "a8057ddee1edbaed13ebaec83613601c3c95e72e"
 
   s.name         = "libvpx"
   s.version      = ver
