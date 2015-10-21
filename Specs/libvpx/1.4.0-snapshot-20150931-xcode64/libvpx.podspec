@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.prepare_command = <<-'CMD'
-                      echo "// Stub .h for paths" > VPX.framework/Headers/vpx-header-stub.h
+                      (cd VPX.framework/Headers && ln -s vpx/* .)
                       CMD
 
   s.homepage     = "https://github.com/brion/VPX-iOS"
