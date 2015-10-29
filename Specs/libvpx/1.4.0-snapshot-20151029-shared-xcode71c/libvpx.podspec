@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  ver = "1.4.0-snapshot-20151029-shared"
-  sha1 = "ea05a7825875f8193c83346ab8119a2a64330d29"
+  ver = "1.4.0-snapshot-20151029-shared-xcode71c"
+  sha1 = "16df1b0f08bb531e348c487868a3634ec995b0cd"
 
   s.name         = "libvpx"
   s.version      = ver
@@ -10,6 +10,8 @@ Pod::Spec.new do |s|
                    VPX framework built from Google's libvpx video codec library.
                    Untouched source, simply pre-built for convenience.
                    DESC
+  # go modular
+  s.ios.deployment_target = "8.0"
 
   s.prepare_command = <<-'CMD'
                       (cd VPX.framework/Headers && ln -s vpx/* .)

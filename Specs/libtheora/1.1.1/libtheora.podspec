@@ -10,6 +10,9 @@ Pod::Spec.new do |s|
   s.version      = ver
   s.summary      = "Low-level Theora video codec library"
 
+  # go modular
+  s.ios.deployment_target = "8.0"
+
   s.description  = <<-DESC
                    Xiph's C-based Theora video codec library, packaged for iOS.
                    Needed for decoding or encoding of video in Ogg media.
@@ -27,6 +30,20 @@ Pod::Spec.new do |s|
   s.source       = { :http => source,
                      :sha1 => sha1 }
 
+  s.prepare_command = <<-'CMD'
+                      echo 'framework module theora {' > theora.modulemap
+                      echo '  umbrella header "theora.h"' >> theora.modulemap
+                      echo '  module theoradec {' >> theora.modulemap
+                      echo '    header "theoradec.h"' >> theora.modulemap
+                      echo '    export *' >> theora.modulemap
+                      echo '  }' >> theora.modulemap
+                      echo '  module theoraenc {' >> theora.modulemap
+                      echo '    header "theoraenc.h"' >> theora.modulemap
+                      echo '    export *' >> theora.modulemap
+                      echo '  }' >> theora.modulemap
+                      echo '}' >> theora.modulemap
+                      CMD
+
   s.compiler_flags = "-O3",
                      "-Wno-conversion",
                      "-Wno-tautological-compare",
@@ -40,6 +57,8 @@ Pod::Spec.new do |s|
   s.exclude_files = "lib/encoder_disabled.c"
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
+  s.module_name = name
+  s.module_map = name + ".modulemap"
   
   s.dependency 'libogg', '>=1.1'
 end
