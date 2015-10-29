@@ -10,6 +10,8 @@ Pod::Spec.new do |s|
                    VPX framework built from Google's libvpx video codec library.
                    Untouched source, simply pre-built for convenience.
                    DESC
+  # go modular
+  s.ios.deployment_target = "8.0"
 
   s.prepare_command = <<-'CMD'
                       (cd VPX.framework/Headers && ln -s vpx/* .)
