@@ -31,12 +31,12 @@ Pod::Spec.new do |s|
                      :sha1 => sha1 }
 
   s.prepare_command = <<-'CMD'
-                      echo 'framework module libogg {' > include/ogg/libogg.modulemap
-                      echo '  umbrella header "ogg.h"' >> include/ogg/libogg.modulemap
-                      echo '  ' >> include/ogg/libogg.modulemap
-                      echo '  export *' >> include/ogg/libogg.modulemap
-                      echo '  module * { export * }' >> include/ogg/libogg.modulemap
-                      echo '}' >> include/ogg/libogg.modulemap
+                      echo 'framework module ogg {' > include/ogg/ogg.modulemap
+                      echo '  umbrella header "ogg.h"' >> include/ogg/ogg.modulemap
+                      echo '  ' >> include/ogg/ogg.modulemap
+                      echo '  export *' >> include/ogg/ogg.modulemap
+                      echo '  module * { export * }' >> include/ogg/ogg.modulemap
+                      echo '}' >> include/ogg/ogg.modulemap
                       CMD
 
   s.compiler_flags = "-O3",
@@ -45,6 +45,6 @@ Pod::Spec.new do |s|
                    "include/**/*.h"
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
-  s.module_name = "libogg"
-  s.module_map = "include/ogg/libogg.modulemap"
+  s.module_name = "ogg"
+  s.module_map = "include/ogg/ogg.modulemap"
 end
