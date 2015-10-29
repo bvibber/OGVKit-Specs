@@ -46,5 +46,5 @@ Pod::Spec.new do |s|
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
   s.module_name = "ogg"
-  s.module_map = "include/ogg/ogg.modulemap"
+  s.module_map = "include/ogg/oggx.modulemap"
 end
