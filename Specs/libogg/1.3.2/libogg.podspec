@@ -27,10 +27,20 @@ Pod::Spec.new do |s|
   s.source       = { :http => source,
                      :sha1 => sha1 }
 
+  s.prepare_command = <<-'CMD'
+                      echo 'framework module libogg {' > include/ogg/libogg.modulemap
+                      echo '  umbrella header "ogg.h"' >> include/ogg/libogg.modulemap
+                      echo '  ' >> include/ogg/libogg.modulemap
+                      echo '  export *' >> include/ogg/libogg.modulemap
+                      echo '  module * { export * }' >> include/ogg/libogg.modulemap
+                      echo '}' >> include/ogg/libogg.modulemap
+                      CMD
+
   s.compiler_flags = "-O3",
                      "-Wno-conversion"
   s.source_files = "src",
                    "include/**/*.h"
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
+  s.module_map = "include/ogg/libogg.modulemap"
 end
