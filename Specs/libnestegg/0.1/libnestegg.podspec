@@ -1,5 +1,8 @@
 Pod::Spec.new do |s|
-  s.name         = "libnestegg"
+  name = 'nestegg'
+  libname = "lib" + name
+
+  s.name         = libname
   s.version      = "0.1"
   s.summary      = "Low-level WebM video container parser library"
 
@@ -20,13 +23,23 @@ Pod::Spec.new do |s|
 
   s.prepare_command = <<-CMD
                       echo "#define _STDINT_HAVE_STDINT_H 1\\n#include <stdint.h>" > include/nestegg/nestegg-stdint.h
+
+                      echo 'framework module nestegg {' > nestegg.modulemap
+                      echo '  umbrella header "nestegg.h"' >> nestegg.modulemap
+                      echo '  ' >> nestegg.modulemap
+                      echo '  export *' >> nestegg.modulemap
+                      echo '  module * { export * }' >> nestegg.modulemap
+                      echo '}' >> nestegg.modulemap
                       CMD
+
 
   s.source_files = "include/**/*.h",
                    "src/**/*.c",
                    "halloc/**/*.{c,h}"
   s.public_header_files = "include/**/*.h"
-  s.header_dir = 'nestegg'
+  s.header_dir = name
+  s.module_name = name
+  s.module_map = name + ".modulemap"
 
   s.compiler_flags = "-Wno-conversion"
 end
