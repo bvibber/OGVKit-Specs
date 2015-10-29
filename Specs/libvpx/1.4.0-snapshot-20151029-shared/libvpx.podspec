@@ -28,5 +28,4 @@ Pod::Spec.new do |s|
                      :flatten => true }
 
   s.vendored_frameworks = "VPX.framework"
-  s.frameworks = "VPX"
 end
