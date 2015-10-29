@@ -45,5 +45,6 @@ Pod::Spec.new do |s|
                    "include/**/*.h"
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
+  s.module_name = "libogg"
   s.module_map = "include/ogg/libogg.modulemap"
 end

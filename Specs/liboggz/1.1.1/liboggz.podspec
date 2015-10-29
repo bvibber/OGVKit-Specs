@@ -88,6 +88,7 @@ Pod::Spec.new do |s|
                    "include/**/*.h"
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
+  s.module_name = "liboggz"
   s.module_map = "include/oggz/liboggz.modulemap"
 
   s.dependency 'libogg', '>=1.0'
