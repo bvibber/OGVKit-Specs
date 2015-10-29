@@ -10,6 +10,9 @@ Pod::Spec.new do |s|
   s.version      = ver
   s.summary      = "Low-level media demuxer/muxer library"
 
+  # go modular
+  s.ios.deployment_target = "8.0"
+
   s.description  = <<-DESC
                    Xiph's C-based Ogg media stream demuxer/muxer library, packaged for iOS.
                    Needed for decoding or encoding of Ogg Theora video and Vorbis audio.

@@ -14,6 +14,9 @@ Pod::Spec.new do |s|
                    Xiph's C-based Ogg media stream demuxer/muxer wrapper library, packaged for iOS.
                    DESC
 
+  # go modular
+  s.ios.deployment_target = "8.0"
+
   s.homepage     = "https://xiph.org/" + name + "/"
 
   s.license      = { :type => "BSD", :file => "COPYING" }
@@ -65,7 +68,12 @@ Pod::Spec.new do |s|
                       echo '#define PRI_OGGZ_OFF_T "ll"' >> include/oggz/oggz_off_t_generated.h
                       echo '#endif /* __OGGZ_OFF_T_GENERATED__ */' >> include/oggz/oggz_off_t_generated.h
                       
-                      
+                      echo 'framework module liboggz {' > include/oggz/liboggz.modulemap
+                      echo '  umbrella header "oggz.h"' >> include/oggz/liboggz.modulemap
+                      echo '  ' >> include/oggz/liboggz.modulemap
+                      echo '  export *' >> include/oggz/liboggz.modulemap
+                      echo '  module * { export * }' >> include/oggz/liboggz.modulemap
+                      echo '}' >> include/oggz/liboggz.modulemap
                       CMD
 
   s.compiler_flags = "-iquote \"$PODS_ROOT/liboggz\"", # hack for use of #include "config.h" in subdirs
@@ -80,6 +88,7 @@ Pod::Spec.new do |s|
                    "include/**/*.h"
   s.public_header_files = "include/**/*.h"
   s.header_dir = name
+  s.module_map = "include/oggz/liboggz.modulemap"
 
   s.dependency 'libogg', '>=1.0'
 end
