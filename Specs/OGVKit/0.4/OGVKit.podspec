@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "OGVKit"
-  s.version      = "0.4"
+  s.version      = "0.5pre"
   s.summary      = "Ogg Vorbis/Theora and WebM media playback widget for iOS."
 
   s.description  = <<-DESC
@@ -17,10 +17,9 @@ Pod::Spec.new do |s|
   s.author             = { "Brion Vibber" => "brion@pobox.com" }
   s.social_media_url   = "https://brionv.com/"
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://github.com/brion/OGVKit.git",
-                     :tag => "0.4",
                      :submodules => true }
 
   s.source_files = "Classes/OGVKit.{h,m}",
@@ -37,7 +36,14 @@ Pod::Spec.new do |s|
                    "Classes/OGVFrameView.{h,m}",
                    "Classes/OGVAudioFeeder.{h,m}",
                    "Classes/OGVPlayerState.{h,m}",
-                   "Classes/OGVPlayerView.{h,m}"
+                   "Classes/OGVPlayerView.{h,m}",
+                   "Classes/OGVDecoderOgg.h",
+                   "Classes/OGVDecoderOggPacket.h",
+                   "Classes/OGVDecoderWebM.h",
+                   "Classes/OGVDecoderWebMPacket.h",
+                   "libskeleton/includes/skeleton/skeleton.h",
+                   "libskeleton/includes/skeleton/skeleton_constants.h",
+                   "libskeleton/includes/skeleton/skeleton_query.h"
 
   s.public_header_files = "Classes/OGVKit.h",
                           "Classes/OGVQueue.h",
@@ -64,6 +70,9 @@ Pod::Spec.new do |s|
       'Resources/ogvkit-iconfont.ttf'
     ]
   }
+
+  s.module_name = 'OGVKit'
+  s.module_map = 'OGVKit.modulemap'
 
   # File format convenience subspecs
   s.subspec "Ogg" do |sogg|
@@ -111,7 +120,7 @@ Pod::Spec.new do |s|
   end
   s.subspec "VP8Decoder" do |svp8decoder|
     svp8decoder.xcconfig = { 'OTHER_CFLAGS' => '-DOGVKIT_HAVE_VP8_DECODER' }
-    svp8decoder.dependency 'libvpx', '~>1.4.0-snapshot-20150619'
+    svp8decoder.dependency 'libvpx', '~>1.4.0-snapshot-20151029-shared-xcode71c'
   end
 
   # Audio decoder module subspecs
