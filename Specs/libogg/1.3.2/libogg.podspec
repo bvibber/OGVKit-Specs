@@ -32,10 +32,10 @@ Pod::Spec.new do |s|
 
   s.prepare_command = <<-'CMD'
                       echo 'framework module ogg {' > ogg.modulemap
-                      echo '  umbrella header "ogg.h"' >> ogg.modulemap
-                      echo '  ' >> ogg.modulemap
-                      echo '  export *' >> ogg.modulemap
-                      echo '  module * { export * }' >> ogg.modulemap
+                      echo '  module ogg {' >> ogg.modulemap
+                      echo '    umbrella header "ogg.h"' >> ogg.modulemap
+                      echo '    export *' >> ogg.modulemap
+                      echo '  }' >> ogg.modulemap
                       echo '}' >> ogg.modulemap
                       CMD
 

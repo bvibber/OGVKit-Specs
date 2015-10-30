@@ -25,10 +25,10 @@ Pod::Spec.new do |s|
                       echo "#define _STDINT_HAVE_STDINT_H 1\\n#include <stdint.h>" > include/nestegg/nestegg-stdint.h
 
                       echo 'framework module nestegg {' > nestegg.modulemap
-                      echo '  umbrella header "nestegg.h"' >> nestegg.modulemap
-                      echo '  ' >> nestegg.modulemap
-                      echo '  export *' >> nestegg.modulemap
-                      echo '  module * { export * }' >> nestegg.modulemap
+                      echo '  module nestegg {' >> nestegg.modulemap
+                      echo '    umbrella header "nestegg.h"' >> nestegg.modulemap
+                      echo '    export *' >> nestegg.modulemap
+                      echo '  }' >> nestegg.modulemap
                       echo '}' >> nestegg.modulemap
                       CMD
 

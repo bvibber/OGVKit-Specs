@@ -68,12 +68,12 @@ Pod::Spec.new do |s|
                       echo '#define PRI_OGGZ_OFF_T "ll"' >> include/oggz/oggz_off_t_generated.h
                       echo '#endif /* __OGGZ_OFF_T_GENERATED__ */' >> include/oggz/oggz_off_t_generated.h
                       
-                      echo 'framework module oggz {' > include/oggz/oggz.modulemap
-                      echo '  umbrella header "oggz.h"' >> include/oggz/oggz.modulemap
-                      echo '  ' >> include/oggz/oggz.modulemap
-                      echo '  export *' >> include/oggz/oggz.modulemap
-                      echo '  module * { export * }' >> include/oggz/oggz.modulemap
-                      echo '}' >> include/oggz/oggz.modulemap
+                      echo 'framework module oggz {' > oggz.modulemap
+                      echo '  module oggz {' >> oggz.modulemap
+                      echo '    umbrella header "oggz.h"' >> oggz.modulemap
+                      echo '    export *' >> oggz.modulemap
+                      echo '  }' >> oggz.modulemap
+                      echo '}' >> oggz.modulemap
                       CMD
 
   s.compiler_flags = "-iquote \"$PODS_ROOT/liboggz\"", # hack for use of #include "config.h" in subdirs
