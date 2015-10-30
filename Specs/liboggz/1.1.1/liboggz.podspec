@@ -69,6 +69,7 @@ Pod::Spec.new do |s|
                       echo '#endif /* __OGGZ_OFF_T_GENERATED__ */' >> include/oggz/oggz_off_t_generated.h
                       
                       echo 'framework module oggz {' > oggz.modulemap
+                      echo '  umbrella header "oggz.h"' >> oggz.modulemap
                       echo '  module oggz {' >> oggz.modulemap
                       echo '    header "oggz.h"' >> oggz.modulemap
                       echo '    export *' >> oggz.modulemap

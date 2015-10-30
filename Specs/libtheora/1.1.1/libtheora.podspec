@@ -32,6 +32,7 @@ Pod::Spec.new do |s|
 
   s.prepare_command = <<-'CMD'
                       echo 'framework module theora {' > theora.modulemap
+                      echo '  umbrella header "theora.h"' >> theora.modulemap
                       echo '  module theoradec {' >> theora.modulemap
                       echo '    header "theoradec.h"' >> theora.modulemap
                       echo '    export *' >> theora.modulemap
