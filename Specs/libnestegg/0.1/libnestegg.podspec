@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
 
                       echo 'framework module nestegg {' > nestegg.modulemap
                       echo '  module nestegg {' >> nestegg.modulemap
-                      echo '    umbrella header "nestegg.h"' >> nestegg.modulemap
+                      echo '    header "nestegg.h"' >> nestegg.modulemap
                       echo '    export *' >> nestegg.modulemap
                       echo '  }' >> nestegg.modulemap
                       echo '}' >> nestegg.modulemap

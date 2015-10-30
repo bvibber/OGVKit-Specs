@@ -70,7 +70,7 @@ Pod::Spec.new do |s|
                       
                       echo 'framework module oggz {' > oggz.modulemap
                       echo '  module oggz {' >> oggz.modulemap
-                      echo '    umbrella header "oggz.h"' >> oggz.modulemap
+                      echo '    header "oggz.h"' >> oggz.modulemap
                       echo '    export *' >> oggz.modulemap
                       echo '  }' >> oggz.modulemap
                       echo '}' >> oggz.modulemap

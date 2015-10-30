@@ -30,11 +30,11 @@ Pod::Spec.new do |s|
   s.prepare_command = <<-'CMD'
                       echo 'framework module vorbis {' > vorbis.modulemap
                       echo '  module vorbisfile {' >> vorbis.modulemap
-                      echo '    umbrella header "vorbisfile.h"' >> vorbis.modulemap
+                      echo '    header "vorbisfile.h"' >> vorbis.modulemap
                       echo '    export *' >> vorbis.modulemap
                       echo '  }' >> vorbis.modulemap
                       echo '  module vorbisenc {' >> vorbis.modulemap
-                      echo '    umbrella header "vorbisenc.h"' >> vorbis.modulemap
+                      echo '    header "vorbisenc.h"' >> vorbis.modulemap
                       echo '    export *' >> vorbis.modulemap
                       echo '  }' >> vorbis.modulemap
                       echo '}' >> vorbis.modulemap
