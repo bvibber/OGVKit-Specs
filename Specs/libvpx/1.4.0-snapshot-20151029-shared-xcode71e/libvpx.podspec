@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  ver = "1.4.0-snapshot-20151029-shared-xcode71c"
-  sha1 = "16df1b0f08bb531e348c487868a3634ec995b0cd"
+  ver = "1.4.0-snapshot-20151029-shared-xcode71e"
+  sha1 = "3bfce020f9e64dea784435d96241529e01766b3c"
 
   s.name         = "libvpx"
   s.version      = ver
@@ -10,8 +10,6 @@ Pod::Spec.new do |s|
                    VPX framework built from Google's libvpx video codec library.
                    Untouched source, simply pre-built for convenience.
                    DESC
-  # go modular
-  s.ios.deployment_target = "8.0"
 
   s.prepare_command = <<-'CMD'
                       (cd VPX.framework/Headers && ln -s vpx/* .)
@@ -23,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.author             = { "Brion Vibber (packager)" => "brion@pobox.com" }
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
   s.source       = { :http => "https://github.com/brion/VPX-iOS/releases/download/" + ver + "/VPX-iOS.zip",
                      :sha1 => sha1,
