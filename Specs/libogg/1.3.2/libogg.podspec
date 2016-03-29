@@ -38,6 +38,48 @@ Pod::Spec.new do |s|
                       echo '    export *' >> ogg.modulemap
                       echo '  }' >> ogg.modulemap
                       echo '}' >> ogg.modulemap
+
+                      cat <<PATCH1 > 0001-Work-around-iOS-dynamic-framework-build-problems.patch
+                      From a3c546e5f9e78d1e576b685a94a3f4d2aef1684f Mon Sep 17 00:00:00 2001
+                      From: Brion Vibber <brion@pobox.com>
+                      Date: Mon, 28 Mar 2016 17:20:52 -0700
+                      Subject: [PATCH] Work around iOS dynamic framework build problems
+
+                      If building with module maps (suitable for inclusion in Swift project)
+                      the attempt to #include <inttypes.h> fails with a clang error:
+
+                        Include of non-modular header inside framework module 'ogg'
+
+                      In this case, the actual module seems to be already included so
+                      it's safe to exclude it here based on the relevant macro.
+
+                      Upstream bug: https://github.com/brion/OGVKit-Specs/issues/2
+                      ---
+                       include/ogg/os_types.h | 4 +++-
+                       1 file changed, 3 insertions(+), 1 deletion(-)
+
+                      diff --git a/include/ogg/os_types.h b/include/ogg/os_types.h
+                      index b8f5630..8db05e2 100644
+                      --- a/include/ogg/os_types.h
+                      +++ b/include/ogg/os_types.h
+                      @@ -69,7 +69,9 @@
+
+                       #elif (defined(__APPLE__) && defined(__MACH__)) /* MacOS X Framework build */
+
+                      -#  include <inttypes.h>
+                      +#  if !defined(__CLANG_INTTYPES_H)
+                      +#    include <inttypes.h>
+                      +#   endif
+                          typedef int16_t ogg_int16_t;
+                          typedef uint16_t ogg_uint16_t;
+                          typedef int32_t ogg_int32_t;
+                      --
+                      2.7.4
+
+                      PATCH1
+
+                      patch -p1 < 0001-Work-around-iOS-dynamic-framework-build-problems.patch
+
                       CMD
 
   s.compiler_flags = "-O3",
