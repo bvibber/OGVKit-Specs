@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
-  ver = "1.4.0-snapshot-20151029-shared-xcode71e"
-  sha1 = "3bfce020f9e64dea784435d96241529e01766b3c"
+  ver = "1.5.0-snapshot-20160502"
+  sha1 = "4c7383d18f94a301a5e1b4a73d79b298f9a506d0"
 
   s.name         = "libvpx"
   s.version      = ver
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                    VPX framework built from Google's libvpx video codec library.
-                   Untouched source, simply pre-built for convenience.
+                   Slightly tweaked source for build fixes, pre-built for convenience.
                    DESC
 
   s.prepare_command = <<-'CMD'
