@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   ver = "1.0.0"
-  sha1 = "403861aa6ee7abc446f9515d9bb613ac03ce51b0"
+  sha1 = "d27601018a7465ac07b09be792b1097c14247ecc"
 
   s.name         = "WebM"
   s.version      = ver
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 
   s.description  = <<-DESC
                    WebM framework built from Google's libwebm demuxer/muxer library.
-                   Untouched source, pre-built for convenience.
+                   Source slightly modified to fix build, header issues.
                    DESC
 
   s.homepage     = "https://github.com/brion/WebM-iOS"
@@ -24,11 +24,4 @@ Pod::Spec.new do |s|
                      :flatten => true }
 
   s.vendored_frameworks = "WebM.framework"
-
-  # Headers don't quite work as written, unless we add the Headers dir
-  # to our own path...
-  s.preserve_paths = "*.framework"
-  s.public_header_files = "WebM.framework/Headers/**/*.h"
-  s.header_mappings_dir = "WebM.framework/Headers"
-  s.header_dir = "./"
 end
