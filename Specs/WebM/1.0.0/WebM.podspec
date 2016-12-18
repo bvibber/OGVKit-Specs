@@ -27,6 +27,6 @@ Pod::Spec.new do |s|
 
   # Headers don't quite work as written, unless we add the Headers dir
   # to our own path...
-  s.source_files = "WebM.framework/Headers/**/*.h"
+  s.public_header_files = "WebM.framework/Headers/**/*.h"
   s.header_mappings_dir = "WebM.framework/Headers"
 end
