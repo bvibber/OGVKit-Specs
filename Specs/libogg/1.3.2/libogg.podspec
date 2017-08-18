@@ -89,8 +89,8 @@ Pod::Spec.new do |s|
                           typedef int32_t ogg_int32_t;
                       PATCH2
 
-                      patch -p1 < 0001-Work-around-iOS-dynamic-framework-build-problems.patch \
-                            -p2 < 0002-Work-around-iOS-Xcode9-build-problems.patch
+                      patch -p1 < 0001-Work-around-iOS-dynamic-framework-build-problems.patch
+                      patch -p1 < 0002-Work-around-iOS-Xcode9-build-problems.patch
 
                       CMD
 
