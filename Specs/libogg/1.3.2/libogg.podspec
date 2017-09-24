@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
                       index b8f5630..c787543 100644
                       --- a/include/ogg/os_types.h
                       +++ b/include/ogg/os_types.h
-                      @@ -69,7 +69,6 @@
+                      @@ -69,7 +69,7 @@
 
                        #elif (defined(__APPLE__) && defined(__MACH__)) /* MacOS X Framework build */
 
