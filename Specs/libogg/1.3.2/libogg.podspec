@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
 
                         Include of non-modular header inside framework module 'ogg'
 
-                      In this case, we don't seem to need it? Seems safe to exclude.
+                      In iOS 11 SDK and later we need to use sys/types.h instead.
 
                       Upstream bug: https://github.com/brion/OGVKit-Specs/issues/2
                       ---
@@ -66,6 +66,7 @@ Pod::Spec.new do |s|
                        #elif (defined(__APPLE__) && defined(__MACH__)) /* MacOS X Framework build */
 
                       -#  include <inttypes.h>
+                      +#  include <sys/types.h>
                           typedef int16_t ogg_int16_t;
                           typedef uint16_t ogg_uint16_t;
                           typedef int32_t ogg_int32_t;
