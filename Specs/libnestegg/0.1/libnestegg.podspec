@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "6.0"
 
   s.source       = { :git => "https://github.com/kinetiknz/nestegg.git",
-                     :commit => "807e6eeae5f3824d3663ed67423553c8c0d53498" }
+                     :commit => "4acb171d4838924ae7b6ba824e69d4f7cd9eb578" }
 
   s.prepare_command = <<-CMD
                       echo "#define _STDINT_HAVE_STDINT_H 1\\n#include <stdint.h>" > include/nestegg/nestegg-stdint.h
