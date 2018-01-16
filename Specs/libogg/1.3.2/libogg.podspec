@@ -75,7 +75,23 @@ Pod::Spec.new do |s|
 
                       PATCH1
 
+                      cat <<PATCH2 > 0002-Work-around-iOS-Xcode9-build-problems.patch
+                      diff --git a/include/ogg/os_types.h b/include/ogg/os_types.h
+                      index 1d94b4b..bbf84fb 100644
+                      --- a/include/ogg/os_types.h
+                      +++ b/include/ogg/os_types.h
+                      @@ -68,6 +68,7 @@
+                       
+                       #elif (defined(__APPLE__) && defined(__MACH__)) /* MacOS X Framework build */
+                       
+                      +#  include <sys/types.h>
+                          typedef int16_t ogg_int16_t;
+                          typedef uint16_t ogg_uint16_t;
+                          typedef int32_t ogg_int32_t;
+                      PATCH2
+
                       patch -p1 < 0001-Work-around-iOS-dynamic-framework-build-problems.patch
+                      patch -p1 < 0002-Work-around-iOS-Xcode9-build-problems.patch
 
                       CMD
 
