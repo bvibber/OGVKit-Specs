@@ -48,7 +48,7 @@ Pod::Spec.new do |s|
                       echo '}' >> theora.modulemap
                       CMD
 
-  s.compiler_flags = "-O3 --std=c90"
+  s.compiler_flags = "-O3 --std=c89"
   s.source_files = "lib",
                    "include/**/*.h"
   s.exclude_files = "lib/encoder_disabled.c"
