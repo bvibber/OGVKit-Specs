@@ -25,13 +25,13 @@ Pod::Spec.new do |s|
   s.author             = { "Brion Vibber (packager)" => "brion@pobox.com" }
   s.social_media_url   = "https://planet.xiph.org/"
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
   # Go back to this when there's a release of 1.2
   #s.source       = { :http => source,
   #                   :sha1 => sha1 }
 
-  s.source        = { :git => "https://github.com/brion/theora",
+  s.source        = { :git => "https://github.com/brion/theora.git",
                       :tag => ver }
 
   s.prepare_command = <<-'CMD'
@@ -48,7 +48,16 @@ Pod::Spec.new do |s|
                       echo '}' >> theora.modulemap
                       CMD
 
-  s.compiler_flags = "-O3 --std=c89"
+  s.compiler_flags = "-O3",
+                     "-Wno-conversion",
+                     "-Wno-tautological-compare",
+                     "-Wno-absolute-value",
+                     "-Wno-shift-op-parentheses",
+                     "-Wno-logical-op-parentheses",
+                     "-Wno-parentheses",
+                     "-Wno-unused-function",
+                     "-Wno-shift-negative-value",
+                     "-Wno-conditional-uninitialized"
   s.source_files = "lib",
                    "include/**/*.h"
   s.exclude_files = "lib/encoder_disabled.c"

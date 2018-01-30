@@ -16,14 +16,12 @@ Pod::Spec.new do |s|
 
   s.author             = { "Brion Vibber (packager)" => "brion@pobox.com" }
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://github.com/kinetiknz/nestegg.git",
                      :commit => "89ed0daf2edccb25f744e5faff88b8b4684adceb" }
 
   s.prepare_command = <<-CMD
-                      echo "#define _STDINT_HAVE_STDINT_H 1\\n#include <stdint.h>" > include/nestegg/nestegg-stdint.h
-
                       echo 'framework module nestegg {' > nestegg.modulemap
                       echo '  umbrella header "nestegg.h"' >> nestegg.modulemap
                       echo '  module nestegg {' >> nestegg.modulemap
