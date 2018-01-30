@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   name = "theora"
   libname = "lib" + name
-  ver = "1.2.0-2"
+  ver = "1.2.0-3"
   #libver = libname + "-" + ver
   #source = "http://downloads.xiph.org/releases/" + name + "/" + libver + ".tar.bz2"
   #sha1 = "8dcaa8e61cd86eb1244467c0b64b9ddac04ae262"
