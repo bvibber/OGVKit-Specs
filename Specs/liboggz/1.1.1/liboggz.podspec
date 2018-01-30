@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   libname = "lib" + name
   ver = "1.1.1"
   libver = libname + "-" + ver
-  source = "http://downloads.xiph.org/releases/" + libname + "/" + libver + ".tar.gz"
+  source = "https://downloads.xiph.org/releases/" + libname + "/" + libver + ".tar.gz"
   sha1 = "3540190c8c9a31d834aa7794ef991bbab699f4de"
 
   s.name         = "liboggz"
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.author             = { "Brion Vibber (packager)" => "brion@pobox.com" }
   s.social_media_url   = "https://planet.xiph.org/"
 
-  s.platform     = :ios, "6.0"
+  s.platform     = :ios, "8.0"
 
   s.source       = { :http => source,
                      :sha1 => sha1 }
